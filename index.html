@@ -52,7 +52,7 @@
         };
         
         // assumes you have events 'Signup' and 'Purchase'
-          MP.api.funnel(eventObject,params).done(function(results) {
+          MP.api.funnel({event: 'App Open'},{event: 'Song Played'},params).done(function(results) {
               console.log(results);
           });
       };
