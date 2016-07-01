@@ -30,6 +30,12 @@
         var eventName = eventSelect.MPEventSelect('value'),
             propName  = propSelect.MPPropertySelect('value'),
             dateRange = dateSelect.MPDatepicker('value');
+            
+            
+        MP.api.query('/api/2.0/funnels/', {funnel_id: 1683881}).done(function(json) {
+              console.log('got json\n', json.custom_events);
+        });
+      
 
         if (eventName) {
           MP.api.segment(eventName, propName, dateRange).done(function(results) {
